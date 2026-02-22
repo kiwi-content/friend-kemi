@@ -169,6 +169,29 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* ━━━ FOOTER ━━━ */}
+      <footer
+        style={{
+          borderTop: "1px solid #e9e4de",
+          padding: "2rem 1.5rem",
+          textAlign: "center",
+          color: "var(--ink-muted)",
+          fontSize: "0.8rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.75rem",
+          alignItems: "center",
+        }}
+      >
+        <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <Link href="/faq" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>자주 묻는 질문</Link>
+          <Link href="/contact" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>문의하기</Link>
+          <Link href="/terms" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>이용약관</Link>
+          <Link href="/privacy" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>개인정보처리방침</Link>
+        </nav>
+        <p style={{ margin: 0 }}>© 2026 FriendKemi · 사주 오행 기반 친구 케미 테스트</p>
+      </footer>
     </main>
   );
 }
