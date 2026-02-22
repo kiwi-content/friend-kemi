@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
+export const dynamic = "force-static";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: "https://friend-kemi.vercel.app",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
     },
-    sitemap: "https://friend-kemi.vercel.app/sitemap.xml",
-  };
+  ];
 }
