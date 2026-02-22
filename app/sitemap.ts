@@ -4,6 +4,17 @@ export const dynamic = "force-static";
 
 const BASE = "https://friend-kemi.vercel.app";
 
+const ELEMENTS = ["목", "화", "토", "금", "수"] as const;
+
+const resultPages: MetadataRoute.Sitemap = ELEMENTS.flatMap((e1) =>
+  ELEMENTS.map((e2) => ({
+    url: `${BASE}/result/${e1}-${e2}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -42,5 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...resultPages,
   ];
 }

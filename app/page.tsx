@@ -159,6 +159,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ━━━ COMBO LIST SECTION ━━━ */}
+      <section
+        style={{
+          padding: "2.5rem 1.5rem",
+          maxWidth: "480px",
+          margin: "0 auto",
+        }}
+      >
+        <p
+          style={{
+            fontSize: "0.75rem",
+            fontWeight: 600,
+            color: "var(--ink-muted)",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            marginBottom: "1rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.4rem",
+          }}
+        >
+          <Sparkle className="sparkle-inline" />
+          전체 궁합 조합 보기
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gap: "0.5rem",
+          }}
+        >
+          {(["목", "화", "토", "금", "수"] as const).flatMap((e1) =>
+            (["목", "화", "토", "금", "수"] as const).map((e2) => (
+              <Link
+                key={`${e1}-${e2}`}
+                href={`/result/${e1}-${e2}`}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: "0.5rem 0.25rem",
+                  borderRadius: "12px",
+                  border: "1.5px solid #e9e4de",
+                  background: "var(--bg-warm)",
+                  textDecoration: "none",
+                  fontSize: "0.65rem",
+                  color: "var(--ink-light)",
+                  gap: "0.2rem",
+                  transition: "border-color 0.2s",
+                }}
+              >
+                <span style={{ fontSize: "1rem" }}>
+                  {({ 목: "🌿", 화: "🔥", 토: "🪨", 금: "⚔️", 수: "🌊" } as Record<string, string>)[e1]}
+                  {({ 목: "🌿", 화: "🔥", 토: "🪨", 금: "⚔️", 수: "🌊" } as Record<string, string>)[e2]}
+                </span>
+                <span>{e1}×{e2}</span>
+              </Link>
+            ))
+          )}
+        </div>
+      </section>
+
       {/* ━━━ BOTTOM MARQUEE ━━━ */}
       <div className="bottom-band">
         <div className="bottom-band-inner">
