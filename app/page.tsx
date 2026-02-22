@@ -159,81 +159,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ━━━ COMBO LIST SECTION ━━━ */}
-      <section
-        style={{
-          padding: "2.5rem 1.5rem",
-          maxWidth: "480px",
-          margin: "0 auto",
-        }}
-      >
-        <p
-          style={{
-            fontSize: "0.75rem",
-            fontWeight: 600,
-            color: "var(--ink-muted)",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            marginBottom: "1rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.4rem",
-          }}
-        >
-          <Sparkle className="sparkle-inline" />
-          전체 궁합 조합 보기
-        </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gap: "0.5rem",
-          }}
-        >
-          {(
-            [
-              { slug: "mok", kr: "목", emoji: "🌿" },
-              { slug: "hwa", kr: "화", emoji: "🔥" },
-              { slug: "to",  kr: "토", emoji: "🪨" },
-              { slug: "geum", kr: "금", emoji: "⚔️" },
-              { slug: "su",  kr: "수", emoji: "🌊" },
-            ] as const
-          ).flatMap((e1) =>
-            (
-              [
-                { slug: "mok", kr: "목", emoji: "🌿" },
-                { slug: "hwa", kr: "화", emoji: "🔥" },
-                { slug: "to",  kr: "토", emoji: "🪨" },
-                { slug: "geum", kr: "금", emoji: "⚔️" },
-                { slug: "su",  kr: "수", emoji: "🌊" },
-              ] as const
-            ).map((e2) => (
-              <Link
-                key={`${e1.slug}-${e2.slug}`}
-                href={`/result/${e1.slug}-${e2.slug}`}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  padding: "0.5rem 0.25rem",
-                  borderRadius: "12px",
-                  border: "1.5px solid #e9e4de",
-                  background: "var(--bg-warm)",
-                  textDecoration: "none",
-                  fontSize: "0.65rem",
-                  color: "var(--ink-light)",
-                  gap: "0.2rem",
-                  transition: "border-color 0.2s",
-                }}
-              >
-                <span style={{ fontSize: "1rem" }}>{e1.emoji}{e2.emoji}</span>
-                <span>{e1.kr}×{e2.kr}</span>
-              </Link>
-            ))
-          )}
-        </div>
-      </section>
-
       {/* ━━━ BOTTOM MARQUEE ━━━ */}
       <div className="bottom-band">
         <div className="bottom-band-inner">
@@ -260,6 +185,7 @@ export default function Home() {
         }}
       >
         <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <Link href="/combinations" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>전체 조합 보기</Link>
           <Link href="/faq" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>자주 묻는 질문</Link>
           <Link href="/contact" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>문의하기</Link>
           <Link href="/terms" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>이용약관</Link>
