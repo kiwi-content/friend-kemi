@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "../components/Container";
 
 export const metadata: Metadata = {
@@ -76,6 +77,12 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Container>
+        {/* 네비 */}
+        <div className="form-nav">
+          <Link href="/" className="form-back">←</Link>
+          <span className="form-nav-title">자주 묻는 질문</span>
+        </div>
+
         <h1 className="text-3xl font-bold mb-10 text-center">
           자주 묻는 질문 (FAQ)
         </h1>
