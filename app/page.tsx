@@ -26,9 +26,25 @@ const previewCards = [
   { emoji: "⚡", title: "티격태격 콤비", sub: "금 × 화", rotate: "-1deg" },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "친구 케미 궁합",
+  url: "https://friend-kemi.vercel.app",
+  description:
+    "생년월일을 입력하면 사주 오행으로 두 사람의 친구 궁합을 분석해주는 무료 테스트.",
+  applicationCategory: "EntertainmentApplication",
+  inLanguage: "ko-KR",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+};
+
 export default function Home() {
   return (
     <main className="hero-wrap">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ━━━ MARQUEE BAND ━━━ */}
       <div className="marquee-band">
         <div className="marquee-track">
