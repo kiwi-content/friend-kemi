@@ -190,11 +190,27 @@ export default function Home() {
             gap: "0.5rem",
           }}
         >
-          {(["목", "화", "토", "금", "수"] as const).flatMap((e1) =>
-            (["목", "화", "토", "금", "수"] as const).map((e2) => (
+          {(
+            [
+              { slug: "mok", kr: "목", emoji: "🌿" },
+              { slug: "hwa", kr: "화", emoji: "🔥" },
+              { slug: "to",  kr: "토", emoji: "🪨" },
+              { slug: "geum", kr: "금", emoji: "⚔️" },
+              { slug: "su",  kr: "수", emoji: "🌊" },
+            ] as const
+          ).flatMap((e1) =>
+            (
+              [
+                { slug: "mok", kr: "목", emoji: "🌿" },
+                { slug: "hwa", kr: "화", emoji: "🔥" },
+                { slug: "to",  kr: "토", emoji: "🪨" },
+                { slug: "geum", kr: "금", emoji: "⚔️" },
+                { slug: "su",  kr: "수", emoji: "🌊" },
+              ] as const
+            ).map((e2) => (
               <Link
-                key={`${e1}-${e2}`}
-                href={`/result/${e1}-${e2}`}
+                key={`${e1.slug}-${e2.slug}`}
+                href={`/result/${e1.slug}-${e2.slug}`}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -210,11 +226,8 @@ export default function Home() {
                   transition: "border-color 0.2s",
                 }}
               >
-                <span style={{ fontSize: "1rem" }}>
-                  {({ 목: "🌿", 화: "🔥", 토: "🪨", 금: "⚔️", 수: "🌊" } as Record<string, string>)[e1]}
-                  {({ 목: "🌿", 화: "🔥", 토: "🪨", 금: "⚔️", 수: "🌊" } as Record<string, string>)[e2]}
-                </span>
-                <span>{e1}×{e2}</span>
+                <span style={{ fontSize: "1rem" }}>{e1.emoji}{e2.emoji}</span>
+                <span>{e1.kr}×{e2.kr}</span>
               </Link>
             ))
           )}

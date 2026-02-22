@@ -4,11 +4,11 @@ export const dynamic = "force-static";
 
 const BASE = "https://friend-kemi.vercel.app";
 
-const ELEMENTS = ["목", "화", "토", "금", "수"] as const;
+const SLUGS = ["mok", "hwa", "to", "geum", "su"] as const;
 
-const resultPages: MetadataRoute.Sitemap = ELEMENTS.flatMap((e1) =>
-  ELEMENTS.map((e2) => ({
-    url: `${BASE}/result/${e1}-${e2}`,
+const resultPages: MetadataRoute.Sitemap = SLUGS.flatMap((s1) =>
+  SLUGS.map((s2) => ({
+    url: `${BASE}/result/${s1}-${s2}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,

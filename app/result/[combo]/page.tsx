@@ -4,9 +4,26 @@ import { notFound } from "next/navigation";
 import { chemistryData } from "../../data/chemistry-data";
 
 /* ──────────────────────────────────────
-   상수
+   슬러그 ↔ 한국어 매핑
+   URL: /result/mok-hwa → 목_화
    ────────────────────────────────────── */
-const ELEMENTS = ["목", "화", "토", "금", "수"] as const;
+const SLUG_TO_KR: Record<string, string> = {
+  mok: "목",
+  hwa: "화",
+  to: "토",
+  geum: "금",
+  su: "수",
+};
+
+const KR_TO_SLUG: Record<string, string> = {
+  목: "mok",
+  화: "hwa",
+  토: "to",
+  금: "geum",
+  수: "su",
+};
+
+const SLUGS = ["mok", "hwa", "to", "geum", "su"] as const;
 
 const ELEMENT_EMOJI: Record<string, string> = {
   목: "🌿",
@@ -31,11 +48,11 @@ const REL_BADGE: Record<string, { text: string; bg: string; color: string }> = {
 };
 
 /* ──────────────────────────────────────
-   Static Params — 빌드 시 25개 페이지 생성
+   Static Params — 빌드 시 25개 생성
    ────────────────────────────────────── */
 export function generateStaticParams() {
-  return ELEMENTS.flatMap((e1) =>
-    ELEMENTS.map((e2) => ({ combo: `${e1}-${e2}` }))
+  return SLUGS.flatMap((s1) =>
+    SLUGS.map((s2) => ({ combo: `${s1}-${s2}` }))
   );
 }
 
@@ -48,24 +65,28 @@ export async function generateMetadata({
   params: Promise<{ combo: string }>;
 }): Promise<Metadata> {
   const { combo } = await params;
-  const key = combo.replace("-", "_");
-  const data = chemistryData[key];
+  const [s1, s2] = combo.split("-");
+  const e1 = SLUG_TO_KR[s1];
+  const e2 = SLUG_TO_KR[s2];
+  if (!e1 || !e2) return {};
+
+  const data = chemistryData[`${e1}_${e2}`];
   if (!data) return {};
 
   return {
-    title: `${data.myElement} × ${data.friendElement} 친구 궁합 — ${data.title} | 친구 케미 궁합`,
-    description: `${data.myElement} 유형과 ${data.friendElement} 유형의 친구 궁합 ${data.score}점, ${data.title}. ${data.subtitle}`,
+    title: `${e1} × ${e2} 친구 궁합 — ${data.title} | 친구 케미 궁합`,
+    description: `${e1} 유형과 ${e2} 유형의 친구 궁합 ${data.score}점, ${data.title}. ${data.subtitle}`,
     keywords: [
-      `${data.myElement}${data.friendElement} 궁합`,
-      `${data.myElement} ${data.friendElement} 친구 궁합`,
-      `오행 ${data.myElement} ${data.friendElement}`,
-      `사주 ${data.myElement} ${data.friendElement} 케미`,
+      `${e1}${e2} 궁합`,
+      `${e1} ${e2} 친구 궁합`,
+      `오행 ${e1} ${e2}`,
+      `사주 ${e1} ${e2} 케미`,
       `${data.relationship} 궁합`,
       data.title,
       "친구 궁합 테스트",
     ],
     openGraph: {
-      title: `${data.myElement} × ${data.friendElement} 친구 궁합 — ${data.title}`,
+      title: `${e1} × ${e2} 친구 궁합 — ${data.title}`,
       description: `${data.score}점 · ${data.subtitle}`,
       locale: "ko_KR",
       type: "article",
@@ -134,11 +155,14 @@ export default async function ResultStaticPage({
   params: Promise<{ combo: string }>;
 }) {
   const { combo } = await params;
-  const key = combo.replace("-", "_");
-  const data = chemistryData[key];
+  const [s1, s2] = combo.split("-");
+  const e1 = SLUG_TO_KR[s1];
+  const e2 = SLUG_TO_KR[s2];
+  if (!e1 || !e2) notFound();
+
+  const data = chemistryData[`${e1}_${e2}`];
   if (!data) notFound();
 
-  const [e1, e2] = combo.split("-");
   const relBadge = REL_BADGE[data.relationship];
 
   const jsonLd = {
@@ -286,3 +310,6 @@ export default async function ResultStaticPage({
     </div>
   );
 }
+
+/* 외부에서 slug 생성 시 사용 */
+export { KR_TO_SLUG };
