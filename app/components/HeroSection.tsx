@@ -25,7 +25,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-xl">
-          MBTI 기반 우리 사이 관계 시뮬레이션<br />
+          사주 오행으로 보는 우리 사이 케미<br />
           재미로 보는 친구 궁합 테스트
         </p>
 

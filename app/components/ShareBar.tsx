@@ -81,7 +81,7 @@ export default function ShareBar({ title, subtitle }: Props) {
     ctx.font = "500 34px system-ui, -apple-system, Segoe UI, Roboto, Arial";
     wrapText(
       ctx,
-      "MBTI 기반으로 재미로 보는 친구 케미 궁합",
+      "사주 오행으로 보는 친구 케미 궁합",
       540,
       780,
       820,

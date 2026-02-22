@@ -74,7 +74,7 @@ export default function Home() {
           <p className="hero-desc">
             친구에도 <strong>케미</strong>는 필수!
             <br />
-            오행 + MBTI로 알아보는
+            사주 오행으로 알아보는
             <br />
             우리 사이 <em>진짜</em> 궁합
           </p>

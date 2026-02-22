@@ -34,7 +34,7 @@ export default function Hero() {
       </h1>
 
       <p className="text-lg text-gray-600 mb-10">
-        MBTI 기반으로 재미로 보는 친구 케미 테스트
+        사주 오행으로 보는 재미있는 친구 케미 테스트
       </p>
 
       {/* CTA */}

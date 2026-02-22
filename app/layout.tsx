@@ -3,10 +3,10 @@ import "./globals.css";
 export const metadata = {
   title: "친구 케미 궁합 💜 두근두근 스쿨 케미",
   description:
-    "오행 + MBTI로 알아보는 찐친 궁합 테스트. 조별과제부터 찐친까지, 우리 사이 진짜 케미를 확인해봐!",
+    "사주 오행으로 알아보는 찐친 궁합 테스트. 조별과제부터 찐친까지, 우리 사이 진짜 케미를 확인해봐!",
   openGraph: {
     title: "친구 케미 궁합 💜",
-    description: "오행 + MBTI 기반 친구 궁합 테스트",
+    description: "사주 오행 기반 친구 궁합 테스트",
     locale: "ko_KR",
     type: "website",
   },

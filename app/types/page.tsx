@@ -23,7 +23,7 @@ function TypeCard({ title }: any) {
     <div className="bg-white rounded-3xl p-6 shadow-lg mb-6">
       <h2 className="font-semibold text-[#7C3AED] mb-2">{title}</h2>
       <p className="text-gray-600">
-        해당 유형은 MBTI 조합에 따라 자동 분류됩니다.
+        해당 유형은 사주 오행 조합에 따라 분류됩니다.
       </p>
     </div>
   );
