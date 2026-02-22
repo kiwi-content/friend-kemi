@@ -25,13 +25,13 @@
   --bg: #f6f4f0;
   --bg-warm: #faf8f5;
   --ink: #1a1625;
-  --ink-light: #6b6580;
-  --ink-muted: #9490a0;
+  --ink-light: #4a4365;
+  --ink-muted: #6e6a80;
 
-  --rose: #e11d74;
-  --rose-light: #f9a8d4;
+  --rose: #d4629a;
+  --rose-light: #f0a8cc;
   --rose-bg: #fdf2f8;
-  --rose-glow: rgba(225, 29, 116, 0.25);
+  --rose-glow: rgba(212, 98, 154, 0.22);
 
   --peach: #ff7f50;
   --peach-light: #ffe0d0;
@@ -249,8 +249,8 @@ body {
 /* 본문 설명 — Bold 폰트로 변경 */
 .hero-desc {
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  line-height: 1.9;
+  font-size: 1.0rem;
+  line-height: 2.0;
   color: var(--ink-light);
   margin-bottom: 1.5rem;
 }
@@ -573,13 +573,13 @@ body {
 }
 .preview-card-title {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--ink);
   margin-top: 10px;
 }
 .preview-card-sub {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--ink-light);
   margin-top: 4px;
 }
@@ -905,9 +905,9 @@ body {
   background: var(--bg-warm);
   border: 1.5px solid #e5e2dd;
   border-radius: 28px;
-  padding: 32px 24px;
+  padding: 40px 28px;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   animation: fadeInUp 0.7s ease-out both;
 }
 
@@ -972,16 +972,16 @@ body {
 }
 .result-hero-title {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--ink);
   margin-bottom: 6px;
 }
 .result-hero-subtitle {
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--ink-light);
   margin-bottom: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 /* 뱃지들 */
@@ -1007,9 +1007,9 @@ body {
 /* 요약 */
 .result-summary {
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--ink-light);
-  line-height: 1.85;
+  line-height: 2.0;
   text-align: left;
   padding-top: 16px;
   border-top: 1px solid #e5e2dd;
@@ -1017,7 +1017,7 @@ body {
 
 /* ── 섹션 공통 ── */
 .result-section {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   animation: fadeInUp 0.7s ease-out both;
 }
 .result-section:nth-child(3) { animation-delay: 0.1s; }
@@ -1050,7 +1050,7 @@ body {
   background: var(--bg-warm);
   border: 1.5px solid #e5e2dd;
   border-radius: 20px;
-  padding: 18px 16px;
+  padding: 22px 20px;
   transition: transform 0.2s ease;
 }
 .result-point-card:hover {
@@ -1074,14 +1074,14 @@ body {
 }
 .result-point-title {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   color: var(--ink);
 }
 .result-point-desc {
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--ink-light);
-  line-height: 1.75;
+  line-height: 1.9;
 }
 
 /* ── 팁 ── */
@@ -1097,7 +1097,7 @@ body {
   background: var(--bg-warm);
   border: 1.5px solid #e5e2dd;
   border-radius: 16px;
-  padding: 14px 16px;
+  padding: 18px 20px;
 }
 .result-tip-emoji {
   font-size: 1.2rem;
@@ -1106,9 +1106,9 @@ body {
 }
 .result-tip-text {
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--ink-light);
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
 /* ── 추천 활동 ── */
@@ -1143,9 +1143,9 @@ body {
 }
 .result-activity-desc {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--ink-light);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ── 운세 카드 ── */
@@ -1171,9 +1171,9 @@ body {
 }
 .result-fortune-text {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 /* ── 액션 버튼 ── */
