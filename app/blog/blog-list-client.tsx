@@ -59,10 +59,7 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
   return (
     <>
       <section className="mb-8">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-bold">✨ 인기 글</h2>
-          <span className="text-xs text-gray-500">상단 고정 추천</span>
-        </div>
+        <h2 className="text-lg font-bold mb-3">✨ 인기 글</h2>
 
         <div className="space-y-3">
           {featuredPosts.map((post) => (
@@ -144,10 +141,7 @@ export default function BlogListClient({ posts }: { posts: BlogPost[] }) {
       </section>
 
       <section>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-bold">📚 전체 글</h2>
-          <span className="text-xs text-gray-500">{filteredPosts.length}개 결과</span>
-        </div>
+        <h2 className="text-lg font-bold mb-3">📚 전체 글</h2>
 
         {filteredPosts.length > 0 ? (
           <div className="space-y-4">

@@ -61,12 +61,6 @@ const categoryEmoji: Record<(typeof blogPosts)[number]["category"], string> = {
   대화법: "💬",
 };
 
-const flowGuideEmoji: Record<(typeof blogPosts)[number]["category"], string> = {
-  신학기: "🙋‍♀️",
-  갈등해결: "🤝",
-  대화법: "🗣️",
-};
-
 const sectionEmoji = ["🌷", "✨", "🍀", "🫶", "💡", "🎀"] as const;
 const paragraphEmoji = ["💬", "🌼", "✨", "🍀"] as const;
 
@@ -213,8 +207,7 @@ export default async function BlogPostPage({
 
         <div className="mb-4 px-1">
           <p className="text-xs text-gray-500">
-            {flowGuideEmoji[post.category]} 아래 박스는 순서대로 이어져 있어. 위에서부터 따라 읽으면 더
-            이해하기 쉬워.
+            🙋‍♀️ 너무 고민 고민하지마! 팔로팔로 미
           </p>
         </div>
 
