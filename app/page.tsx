@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { OG_IMAGE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo";
 
 /* ──────────────────────────────────────
    FriendKemi Hero — Editorial × Playful
@@ -26,13 +28,33 @@ const previewCards = [
   { emoji: "⚡", title: "티격태격 콤비", sub: "금 × 화", rotate: "-1deg" },
 ];
 
+export const metadata: Metadata = {
+  title: `${SITE_NAME} 메인`,
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: `${SITE_NAME} 💜`,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    type: "website",
+    images: [OG_IMAGE_PATH],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} 💜`,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
+  },
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "친구 케미 궁합",
-  url: "https://friend-kemi.vercel.app",
-  description:
-    "생년월일을 입력하면 사주 오행으로 두 사람의 친구 궁합을 분석해주는 무료 테스트.",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
   applicationCategory: "EntertainmentApplication",
   inLanguage: "ko-KR",
   offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -185,6 +207,7 @@ export default function Home() {
         }}
       >
         <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <Link href="/blog" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>친구 관계 꿀팁</Link>
           <Link href="/combinations" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>전체 조합 보기</Link>
           <Link href="/faq" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>자주 묻는 질문</Link>
           <Link href="/contact" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>문의하기</Link>

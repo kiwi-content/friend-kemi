@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "문의하기 | 친구 케미 궁합",
   description:
     "친구 케미 궁합 서비스 관련 문의, 오류 신고, 콘텐츠 제안은 이메일로 보내주세요. 빠르게 답변 드립니다.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: `문의하기 | ${SITE_NAME}`,
+    description: "서비스 문의, 오류 신고, 콘텐츠 제안을 이메일로 보내주세요.",
+    url: "/contact",
+    type: "website",
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 export default function Contact() {

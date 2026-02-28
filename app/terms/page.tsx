@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "이용약관 | 친구 케미 궁합",
   description:
     "친구 케미 궁합 서비스 이용약관입니다. 서비스 목적, 이용 조건, 면책 조항 등을 안내합니다.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: `이용약관 | ${SITE_NAME}`,
+    description: "친구 케미 궁합 서비스 이용약관 및 주요 정책 안내입니다.",
+    url: "/terms",
+    type: "article",
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 const sections = [

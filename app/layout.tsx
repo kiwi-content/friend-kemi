@@ -1,9 +1,11 @@
 import "./globals.css";
+import type { Metadata } from "next";
+import { OG_IMAGE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo";
 
-export const metadata = {
-  title: "친구 케미 궁합 💜 두근두근 스쿨 케미",
-  description:
-    "사주 오행으로 알아보는 찐친 궁합 테스트. 조별과제부터 찐친까지, 우리 사이 진짜 케미를 확인해봐!",
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: `${SITE_NAME} 💜 두근두근 스쿨 케미`,
+  description: SITE_DESCRIPTION,
   keywords: [
     "친구 궁합",
     "친구 궁합 테스트",
@@ -18,11 +20,41 @@ export const metadata = {
     "찐친 궁합",
     "목화토금수 궁합",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "친구 케미 궁합 💜",
-    description: "사주 오행 기반 친구 궁합 테스트",
+    title: `${SITE_NAME} 💜`,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    url: "/",
     locale: "ko_KR",
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE_PATH,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} 대표 이미지`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} 💜`,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   verification: {
     google: "qRhK_TW2QITIO35Vcuf1N_jHEcgQBd9cGtk42YXvdNo",

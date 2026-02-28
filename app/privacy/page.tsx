@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침 | 친구 케미 궁합",
   description:
     "친구 케미 궁합은 개인정보를 수집·저장하지 않습니다. 모든 계산은 브라우저 내에서 처리됩니다.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: `개인정보처리방침 | ${SITE_NAME}`,
+    description:
+      "개인정보 수집·저장 여부와 처리 원칙을 확인할 수 있는 공식 개인정보처리방침입니다.",
+    url: "/privacy",
+    type: "article",
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 const sections = [

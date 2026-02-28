@@ -1,4 +1,22 @@
+import type { Metadata } from "next";
 import Container from "../components/Container";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
+
+export const metadata: Metadata = {
+  title: "케미 유형 소개 | 친구 케미 궁합",
+  description:
+    "사주 오행 조합으로 분류된 친구 케미 유형을 살펴보고 나와 친구의 관계 스타일을 이해해보세요.",
+  alternates: {
+    canonical: "/types",
+  },
+  openGraph: {
+    title: `케미 유형 소개 | ${SITE_NAME}`,
+    description: "오행 기반 친구 케미 유형을 한눈에 확인해보세요.",
+    url: "/types",
+    type: "article",
+    images: [OG_IMAGE_PATH],
+  },
+};
 
 export default function TypesPage() {
   return (

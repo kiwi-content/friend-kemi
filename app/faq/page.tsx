@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "자주 묻는 질문 | 친구 케미 궁합",
@@ -14,6 +15,23 @@ export const metadata: Metadata = {
     "목화토금수",
     "친구 케미 테스트 방법",
   ],
+  alternates: {
+    canonical: "/faq",
+  },
+  openGraph: {
+    title: `자주 묻는 질문 | ${SITE_NAME}`,
+    description:
+      "친구 궁합 테스트 이용 전에 자주 묻는 질문과 오행 해석 기준을 확인해보세요.",
+    url: "/faq",
+    type: "article",
+    images: [OG_IMAGE_PATH],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `자주 묻는 질문 | ${SITE_NAME}`,
+    description: "오행 궁합 테스트 FAQ를 한 번에 확인하세요.",
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 const faqs = [

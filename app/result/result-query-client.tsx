@@ -1,31 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { chemistryData } from "../../data/chemistry-data";
-import { OG_IMAGE_PATH, SITE_NAME, SITE_URL } from "../../lib/seo";
+import { chemistryData } from "../data/chemistry-data";
 
 /* ──────────────────────────────────────
-   슬러그 ↔ 한국어 매핑
-   URL: /result/mok-hwa → 목_화
+   오행 이모지 맵
    ────────────────────────────────────── */
-const SLUG_TO_KR: Record<string, string> = {
-  mok: "목",
-  hwa: "화",
-  to: "토",
-  geum: "금",
-  su: "수",
-};
-
-const KR_TO_SLUG: Record<string, string> = {
-  목: "mok",
-  화: "hwa",
-  토: "to",
-  금: "geum",
-  수: "su",
-};
-
-const SLUGS = ["mok", "hwa", "to", "geum", "su"] as const;
-
 const ELEMENT_EMOJI: Record<string, string> = {
   목: "🌿",
   화: "🔥",
@@ -49,70 +31,7 @@ const REL_BADGE: Record<string, { text: string; bg: string; color: string }> = {
 };
 
 /* ──────────────────────────────────────
-   Static Params — 빌드 시 25개 생성
-   ────────────────────────────────────── */
-export function generateStaticParams() {
-  return SLUGS.flatMap((s1) =>
-    SLUGS.map((s2) => ({ combo: `${s1}-${s2}` }))
-  );
-}
-
-/* ──────────────────────────────────────
-   Per-page Metadata
-   ────────────────────────────────────── */
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ combo: string }>;
-}): Promise<Metadata> {
-  const { combo } = await params;
-  const [s1, s2] = combo.split("-");
-  const e1 = SLUG_TO_KR[s1];
-  const e2 = SLUG_TO_KR[s2];
-  if (!e1 || !e2) return {};
-
-  const data = chemistryData[`${e1}_${e2}`];
-  if (!data) return {};
-
-  return {
-    title: `${e1} × ${e2} 친구 궁합 — ${data.title} | 친구 케미 궁합`,
-    description: `${e1} 유형과 ${e2} 유형의 친구 궁합 ${data.score}점, ${data.title}. ${data.subtitle}`,
-    keywords: [
-      `${e1}${e2} 궁합`,
-      `${e1} ${e2} 친구 궁합`,
-      `오행 ${e1} ${e2}`,
-      `사주 ${e1} ${e2} 케미`,
-      `${data.relationship} 궁합`,
-      data.title,
-      "친구 궁합 테스트",
-    ],
-    alternates: {
-      canonical: `/result/${combo}`,
-    },
-    openGraph: {
-      title: `${e1} × ${e2} 친구 궁합 — ${data.title}`,
-      description: `${data.score}점 · ${data.subtitle}`,
-      url: `/result/${combo}`,
-      siteName: SITE_NAME,
-      locale: "ko_KR",
-      type: "article",
-      images: [OG_IMAGE_PATH],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${e1} × ${e2} 친구 궁합 — ${data.title}`,
-      description: `${data.score}점 · ${data.subtitle}`,
-      images: [OG_IMAGE_PATH],
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-  };
-}
-
-/* ──────────────────────────────────────
-   Score Ring (정적 SVG)
+   Score Ring SVG
    ────────────────────────────────────── */
 function ScoreRing({ score }: { score: number }) {
   const r = 54;
@@ -122,14 +41,28 @@ function ScoreRing({ score }: { score: number }) {
   return (
     <div className="result-score-ring">
       <svg width="140" height="140" viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r={r} fill="none" stroke="#e5e2dd" strokeWidth="8" />
         <circle
-          cx="60" cy="60" r={r} fill="none"
-          stroke="var(--rose)" strokeWidth="8"
+          cx="60"
+          cy="60"
+          r={r}
+          fill="none"
+          stroke="#e5e2dd"
+          strokeWidth="8"
+        />
+        <circle
+          cx="60"
+          cy="60"
+          r={r}
+          fill="none"
+          stroke="var(--rose)"
+          strokeWidth="8"
           strokeLinecap="round"
           strokeDasharray={circ}
           strokeDashoffset={offset}
           transform="rotate(-90 60 60)"
+          style={{
+            transition: "stroke-dashoffset 1.2s ease-out",
+          }}
         />
       </svg>
       <div className="result-score-inner">
@@ -141,7 +74,7 @@ function ScoreRing({ score }: { score: number }) {
 }
 
 /* ──────────────────────────────────────
-   Section
+   Section Component
    ────────────────────────────────────── */
 function Section({
   emoji,
@@ -164,68 +97,82 @@ function Section({
 }
 
 /* ──────────────────────────────────────
-   Page
+   Result Content (needs Suspense for useSearchParams)
    ────────────────────────────────────── */
-export default async function ResultStaticPage({
-  params,
-}: {
-  params: Promise<{ combo: string }>;
-}) {
-  const { combo } = await params;
-  const [s1, s2] = combo.split("-");
-  const e1 = SLUG_TO_KR[s1];
-  const e2 = SLUG_TO_KR[s2];
-  if (!e1 || !e2) notFound();
+function ResultContent() {
+  const params = useSearchParams();
+  const n1 = params.get("n1") || "나";
+  const n2 = params.get("n2") || "친구";
+  const e1 = params.get("e1") || "목";
+  const e2 = params.get("e2") || "화";
 
-  const data = chemistryData[`${e1}_${e2}`];
-  if (!data) notFound();
+  const key = `${e1}_${e2}`;
+  const data = chemistryData[key];
+
+  if (!data) {
+    return (
+      <div className="result-page">
+        <div className="result-container">
+          <div className="result-error">
+            <span style={{ fontSize: "3rem" }}>🤔</span>
+            <h2>결과를 찾을 수 없어요</h2>
+            <p>다시 테스트해볼까?</p>
+            <Link href="/test" className="result-retry-btn">
+              다시 테스트하기
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const relBadge = REL_BADGE[data.relationship];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: `${e1} × ${e2} 친구 궁합 — ${data.title}`,
-    description: data.summary,
-    url: `${SITE_URL}/result/${combo}`,
-    inLanguage: "ko-KR",
-    keywords: `${e1}${e2} 궁합, 오행 ${e1} ${e2}, 친구 궁합 테스트`,
-  };
+  function handleShare() {
+    const text = `${n1}이랑 ${n2}의 케미는? ${data.title} ${data.emoji} ${data.score}점!\n친구 케미 궁합 테스트 해보기 👉`;
+    if (navigator.share) {
+      navigator.share({ title: "친구 케미 궁합", text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + "\n" + window.location.href);
+      alert("링크가 복사됐어! 친구에게 공유해봐 💗");
+    }
+  }
 
   return (
     <div className="result-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <div className="result-container">
-
         {/* ━━━ 네비 ━━━ */}
         <div className="result-nav">
-          <Link href="/" className="form-back">←</Link>
-          <span className="form-nav-title">{e1} × {e2} 케미 결과</span>
+          <Link href="/test" className="form-back">
+            ←
+          </Link>
+          <span className="form-nav-title">케미 결과</span>
         </div>
 
         {/* ━━━ 히어로 카드 ━━━ */}
         <div className="result-hero-card">
+          {/* 이름 뱃지 */}
           <div className="result-names">
             <div className="result-name-chip">
               <span>{ELEMENT_EMOJI[e1]}</span>
-              <span>{e1} 유형</span>
+              <span>{n1}</span>
             </div>
             <span className="result-name-x">✕</span>
             <div className="result-name-chip">
               <span>{ELEMENT_EMOJI[e2]}</span>
-              <span>{e2} 유형</span>
+              <span>{n2}</span>
             </div>
           </div>
 
+          {/* 스코어 링 */}
           <ScoreRing score={data.score} />
 
+          {/* 타이틀 */}
           <div className="result-hero-emoji">{data.emoji}</div>
           <h1 className="result-hero-title">{data.title}</h1>
           <p className="result-hero-subtitle">{data.subtitle}</p>
 
+          {/* 관계 뱃지 */}
           <div className="result-badges">
             <span
               className="result-rel-badge"
@@ -247,6 +194,7 @@ export default async function ResultStaticPage({
             </span>
           </div>
 
+          {/* 요약 */}
           <p className="result-summary">{data.summary}</p>
         </div>
 
@@ -305,28 +253,48 @@ export default async function ResultStaticPage({
           </div>
         </Section>
 
-        {/* ━━━ 케미 운세 ━━━ */}
+        {/* ━━━ 한 줄 운세 ━━━ */}
         <div className="result-fortune-card">
           <span className="result-fortune-icon">🔮</span>
           <p className="result-fortune-title">케미 운세</p>
           <p className="result-fortune-text">{data.fortune}</p>
         </div>
 
-        {/* ━━━ CTA ━━━ */}
+        {/* ━━━ 공유 + 다시하기 ━━━ */}
         <div className="result-actions">
-          <Link href="/test" className="result-share-btn" style={{ textDecoration: "none", textAlign: "center" }}>
-            내 친구랑 케미 테스트하기 💗
-          </Link>
-          <Link href="/" className="result-retry-link">
-            다른 조합 보러가기 →
+          <button className="result-share-btn" onClick={handleShare}>
+            결과 공유하기 💌
+          </button>
+          <Link href="/test" className="result-retry-link">
+            다른 친구랑 다시 해보기 →
           </Link>
         </div>
 
+        {/* ━━━ 하단 한 줄 ━━━ */}
         <p className="result-oneliner">{data.oneLiner}</p>
       </div>
     </div>
   );
 }
 
-/* 외부에서 slug 생성 시 사용 */
-export { KR_TO_SLUG };
+/* ──────────────────────────────────────
+   Export with Suspense wrapper
+   ────────────────────────────────────── */
+export default function ResultPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="result-page">
+          <div className="result-container" style={{ textAlign: "center", paddingTop: "6rem" }}>
+            <span style={{ fontSize: "2.5rem" }}>🫶🏻</span>
+            <p style={{ fontFamily: "var(--font-display)", marginTop: "1rem", color: "var(--ink-light)" }}>
+              케미 분석 중...
+            </p>
+          </div>
+        </div>
+      }
+    >
+      <ResultContent />
+    </Suspense>
+  );
+}

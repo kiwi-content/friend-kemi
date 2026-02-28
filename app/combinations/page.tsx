@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import { chemistryData } from "../data/chemistry-data";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "전체 오행 궁합 조합 25가지 | 친구 케미 궁합",
@@ -15,6 +16,23 @@ export const metadata: Metadata = {
     "상생 상극 궁합",
     "오행 궁합 점수",
   ],
+  alternates: {
+    canonical: "/combinations",
+  },
+  openGraph: {
+    title: `전체 오행 궁합 조합 25가지 | ${SITE_NAME}`,
+    description:
+      "목·화·토·금·수 오행 유형별 친구 궁합 조합 25가지를 한눈에 확인하세요.",
+    url: "/combinations",
+    type: "website",
+    images: [OG_IMAGE_PATH],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `전체 오행 궁합 조합 25가지 | ${SITE_NAME}`,
+    description: "오행 유형별 친구 궁합 조합 25가지를 한눈에 확인해보세요.",
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 const ELEMENTS = [
