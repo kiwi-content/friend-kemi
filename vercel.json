@@ -2,6 +2,10 @@
   "cleanUrls": false,
   "rewrites": [
     {
+      "source": "/google1db0050479a333bf.html",
+      "destination": "/google1db0050479a333bf"
+    },
+    {
       "source": "/naverb945ceee778a02d42858999b38627ee6.html",
       "destination": "/naverb945ceee778a02d42858999b38627ee6"
     },
