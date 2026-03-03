@@ -29,7 +29,7 @@ const previewCards = [
 ];
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} 메인`,
+  title: `${SITE_NAME} | 두근두근 스쿨 케미`,
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
@@ -37,7 +37,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} 💜`,
     description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     url: "/",
+    locale: "ko_KR",
     type: "website",
     images: [OG_IMAGE_PATH],
   },
@@ -51,13 +53,27 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: SITE_NAME,
-  url: SITE_URL,
-  description: SITE_DESCRIPTION,
-  applicationCategory: "EntertainmentApplication",
-  inLanguage: "ko-KR",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      alternateName: "FriendKemi",
+      inLanguage: "ko-KR",
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${SITE_URL}/#webapp`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      applicationCategory: "EntertainmentApplication",
+      inLanguage: "ko-KR",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+    },
+  ],
 };
 
 export default function Home() {

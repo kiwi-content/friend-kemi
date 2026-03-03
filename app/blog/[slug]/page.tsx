@@ -37,6 +37,8 @@ export async function generateMetadata({
       title: `${post.title} | ${SITE_NAME}`,
       description: post.description,
       url: `/blog/${post.slug}`,
+      siteName: SITE_NAME,
+      locale: "ko_KR",
       type: "article",
       images: [OG_IMAGE_PATH],
     },

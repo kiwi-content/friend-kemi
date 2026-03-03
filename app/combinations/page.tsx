@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     description:
       "목·화·토·금·수 오행 유형별 친구 궁합 조합 25가지를 한눈에 확인하세요.",
     url: "/combinations",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "website",
     images: [OG_IMAGE_PATH],
   },

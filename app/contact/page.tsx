@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     title: `문의하기 | ${SITE_NAME}`,
     description: "서비스 문의, 오류 신고, 콘텐츠 제안을 이메일로 보내주세요.",
     url: "/contact",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "website",
     images: [OG_IMAGE_PATH],
   },

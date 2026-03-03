@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     title: `케미 유형 소개 | ${SITE_NAME}`,
     description: "오행 기반 친구 케미 유형을 한눈에 확인해보세요.",
     url: "/types",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "article",
     images: [OG_IMAGE_PATH],
   },

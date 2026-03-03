@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     description:
       "개인정보 수집·저장 여부와 처리 원칙을 확인할 수 있는 공식 개인정보처리방침입니다.",
     url: "/privacy",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "article",
     images: [OG_IMAGE_PATH],
   },

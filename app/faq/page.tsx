@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     description:
       "친구 궁합 테스트 이용 전에 자주 묻는 질문과 오행 해석 기준을 확인해보세요.",
     url: "/faq",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "article",
     images: [OG_IMAGE_PATH],
   },

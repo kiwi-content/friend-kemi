@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     title: `이용약관 | ${SITE_NAME}`,
     description: "친구 케미 궁합 서비스 이용약관 및 주요 정책 안내입니다.",
     url: "/terms",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "article",
     images: [OG_IMAGE_PATH],
   },

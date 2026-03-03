@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     description:
       "신학기 친구 사귀기부터 갈등 해결까지, 학교에서 바로 쓸 수 있는 관계 가이드.",
     url: "/blog",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "website",
     images: [OG_IMAGE_PATH],
   },

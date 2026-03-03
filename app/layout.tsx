@@ -4,6 +4,8 @@ import { OG_IMAGE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  manifest: "/manifest.webmanifest",
   title: `${SITE_NAME} 💜 두근두근 스쿨 케미`,
   description: SITE_DESCRIPTION,
   keywords: [

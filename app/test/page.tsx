@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import TestPageClient from "./test-page-client";
-import { OG_IMAGE_PATH } from "../lib/seo";
+import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "친구 궁합 테스트 시작 | 친구 케미 궁합",
@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     description:
       "생년월일 입력 후 30초 만에 친구 케미 점수와 궁합 해석을 확인해보세요.",
     url: "/test",
+    siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "website",
     images: [OG_IMAGE_PATH],
   },
