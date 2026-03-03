@@ -1,5 +1,15 @@
 {
   "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/naverb945ceee778a02d42858999b38627ee6.html",
+      "destination": "/naverb945ceee778a02d42858999b38627ee6"
+    },
+    {
+      "source": "/naver86cb808605d3b5bd0362d5008782914b.html",
+      "destination": "/naver86cb808605d3b5bd0362d5008782914b"
+    }
+  ],
   "headers": [
     {
       "source": "/naverb945ceee778a02d42858999b38627ee6.html",
