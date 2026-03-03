@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit:*)",
+      "Bash(npm run build:*)",
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:www.whois.com)",
+      "WebFetch(domain:who.is)",
+      "WebFetch(domain:friend-kemi.vercel.app)",
+      "WebFetch(domain:www.ohgunghap.xyz)",
+      "Bash(npx next build)",
+      "Bash(git rm --cached app/api/naver-verify/route.ts)"
+    ]
+  }
+}
