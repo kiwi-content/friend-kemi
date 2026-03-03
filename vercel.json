@@ -1,3 +1,9 @@
 {
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/naverb945ceee778a02d42858999b38627ee6.html",
+      "destination": "/api/naver-verify"
+    }
+  ]
 }
