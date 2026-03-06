@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = "https://friend-kemi.vercel.app";
+const FALLBACK_SITE_URL = "https://www.ohgunghap.xyz";
 
 function stripTrailingSlash(value: string) {
   return value.replace(/\/+$/, "");
