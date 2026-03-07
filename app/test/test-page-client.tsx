@@ -25,7 +25,7 @@ const ELEMENT_EMOJI: Record<string, string> = {
    연/월/일 옵션 생성
    ────────────────────────────────────── */
 const currentYear = new Date().getFullYear();
-const years = Array.from({ length: 50 }, (_, i) => currentYear - i);
+const years = Array.from({ length: 100 }, (_, i) => currentYear - i);
 const months = Array.from({ length: 12 }, (_, i) => i + 1);
 
 function getDays(year: number, month: number) {

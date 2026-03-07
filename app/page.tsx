@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { OG_IMAGE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo";
+import HeroForm from "./components/HeroForm";
 
 /* ──────────────────────────────────────
    FriendKemi Hero — Editorial × Playful
@@ -21,12 +22,6 @@ const Sparkle = ({ className = "" }: { className?: string }) => (
     />
   </svg>
 );
-
-const previewCards = [
-  { emoji: "🔥", title: "불꽃 시너지", sub: "화 × 목", rotate: "-2deg" },
-  { emoji: "🌿", title: "힐링 메이트", sub: "목 × 수", rotate: "1.5deg" },
-  { emoji: "⚡", title: "티격태격 콤비", sub: "금 × 화", rotate: "-1deg" },
-];
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} | 두근두근 스쿨 케미`,
@@ -139,62 +134,9 @@ export default function Home() {
             <span className="sticker sticker--mint">🍀 신학기</span>
           </div>
 
-          <div className="hero-cta-wrap">
-            <Link href="/test" className="hero-cta-btn">
-              케미 확인하러 가기
-              <span className="cta-arrow">↗</span>
-            </Link>
-            <span className="cta-sub">가입 없이 · 30초면 끝!</span>
-          </div>
         </div>
 
-        <div className="hero-right">
-          <div className="badge-main">
-            <span className="badge-emoji">🫶🏻</span>
-            <span className="badge-ring" />
-          </div>
-
-          <div className="combo-float">
-            <span>🔥</span>
-            <span className="combo-op">+</span>
-            <span>🌊</span>
-            <span className="combo-op">=</span>
-            <span className="combo-result">💗</span>
-          </div>
-
-          <div className="year-sticker">
-            <span>2026</span>
-            신학기
-            <br />
-            에디션
-          </div>
-        </div>
-      </section>
-
-      {/* ━━━ DIVIDER ━━━ */}
-      <div className="divider" />
-
-      {/* ━━━ PREVIEW SECTION ━━━ */}
-      <section className="preview-section">
-        <p className="preview-label">
-          <Sparkle className="sparkle-inline" />
-          이런 결과를 받아볼 수 있어요
-        </p>
-
-        <div className="preview-grid">
-          {previewCards.map((card) => (
-            <div
-              key={card.title}
-              className="preview-card"
-              style={{ "--rotate": card.rotate } as React.CSSProperties}
-            >
-              <div className="preview-card-emoji">{card.emoji}</div>
-              <div className="preview-card-title">{card.title}</div>
-              <div className="preview-card-sub">{card.sub}</div>
-              <div className="preview-card-arrow">↗</div>
-            </div>
-          ))}
-        </div>
+        <HeroForm />
       </section>
 
       {/* ━━━ BOTTOM MARQUEE ━━━ */}
