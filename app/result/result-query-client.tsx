@@ -101,10 +101,13 @@ function Section({
    ────────────────────────────────────── */
 function ResultContent() {
   const params = useSearchParams();
+  const VALID_ELEMENTS = ["목", "화", "토", "금", "수"];
   const n1 = params.get("n1") || "나";
   const n2 = params.get("n2") || "친구";
-  const e1 = params.get("e1") || "목";
-  const e2 = params.get("e2") || "화";
+  const e1Raw = params.get("e1") || "목";
+  const e2Raw = params.get("e2") || "화";
+  const e1 = VALID_ELEMENTS.find((el) => e1Raw.startsWith(el)) || "목";
+  const e2 = VALID_ELEMENTS.find((el) => e2Raw.startsWith(el)) || "화";
 
   const key = `${e1}_${e2}`;
   const data = chemistryData[key];
@@ -129,11 +132,13 @@ function ResultContent() {
   const relBadge = REL_BADGE[data.relationship];
 
   function handleShare() {
-    const text = `${n1}이랑 ${n2}의 케미는? ${data.title} ${data.emoji} ${data.score}점!\n친구 케미 궁합 테스트 해보기 👉`;
+    const cleanParams = new URLSearchParams({ n1, n2, e1, e2 });
+    const shareUrl = `${window.location.origin}/result?${cleanParams.toString()}`;
+    const text = `${n1}이랑 ${n2}의 케미는? ${data.title} ${data.emoji} ${data.score}점!`;
     if (navigator.share) {
-      navigator.share({ title: "친구 케미 궁합", text, url: window.location.href });
+      navigator.share({ title: "친구 케미 궁합", text, url: shareUrl });
     } else {
-      navigator.clipboard.writeText(text + "\n" + window.location.href);
+      navigator.clipboard.writeText(`${text}\n친구 케미 궁합 테스트 해보기 👉\n${shareUrl}`);
       alert("링크가 복사됐어! 친구에게 공유해봐 💗");
     }
   }
