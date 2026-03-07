@@ -131,6 +131,139 @@ function ResultContent() {
 
   const relBadge = REL_BADGE[data.relationship];
 
+  function handleSaveImage() {
+    const W = 1080;
+    const H = 1920;
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // ── 배경 ──
+    const bg = ctx.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, "#faf8f5");
+    bg.addColorStop(1, "#f3efe9");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // 장식 원
+    ctx.globalAlpha = 0.12;
+    ctx.fillStyle = "#e8a0b4";
+    ctx.beginPath();
+    ctx.arc(540, 340, 280, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    const font = (weight: number, size: number) =>
+      `${weight} ${size}px "Apple SD Gothic Neo", "Noto Sans KR", sans-serif`;
+
+    // ── 이름 ──
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#4a4365";
+    ctx.font = font(600, 42);
+    ctx.fillText(`${ELEMENT_EMOJI[e1]} ${n1}  ✕  ${ELEMENT_EMOJI[e2]} ${n2}`, W / 2, 240);
+
+    // ── 스코어 ──
+    ctx.fillStyle = "#e8a0b4";
+    ctx.font = font(800, 120);
+    ctx.fillText(`${data.score}`, W / 2, 420);
+    ctx.fillStyle = "#6e6a80";
+    ctx.font = font(500, 36);
+    ctx.fillText("점", W / 2 + 90, 420);
+
+    // ── 이모지 + 타이틀 ──
+    ctx.font = font(400, 64);
+    ctx.fillText(data.emoji, W / 2, 520);
+    ctx.fillStyle = "#1a1625";
+    ctx.font = font(800, 52);
+    ctx.fillText(data.title, W / 2, 600);
+    ctx.fillStyle = "#4a4365";
+    ctx.font = font(500, 32);
+    ctx.fillText(data.subtitle, W / 2, 660);
+
+    // ── 구분선 ──
+    ctx.strokeStyle = "#e5e2dd";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(140, 720);
+    ctx.lineTo(W - 140, 720);
+    ctx.stroke();
+
+    // ── 잘 맞는 점 (상위 2개) ──
+    let y = 800;
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#e8a0b4";
+    ctx.font = font(700, 34);
+    ctx.fillText("💗 잘 맞는 점", 120, y);
+    y += 52;
+
+    data.goodPoints.slice(0, 2).forEach((p) => {
+      ctx.fillStyle = "#1a1625";
+      ctx.font = font(700, 30);
+      ctx.fillText(`${p.emoji} ${p.title}`, 140, y);
+      y += 42;
+      ctx.fillStyle = "#6e6a80";
+      ctx.font = font(400, 26);
+      const lines = wrapCanvasText(ctx, p.desc, W - 300);
+      lines.forEach((line) => {
+        ctx.fillText(line, 140, y);
+        y += 36;
+      });
+      y += 20;
+    });
+
+    // ── 갈등 포인트 (상위 2개) ──
+    y += 10;
+    ctx.fillStyle = "#e8a0b4";
+    ctx.font = font(700, 34);
+    ctx.fillText("⚡ 갈등 포인트", 120, y);
+    y += 52;
+
+    data.conflictPoints.slice(0, 2).forEach((p) => {
+      ctx.fillStyle = "#1a1625";
+      ctx.font = font(700, 30);
+      ctx.fillText(`${p.emoji} ${p.title}`, 140, y);
+      y += 42;
+      ctx.fillStyle = "#6e6a80";
+      ctx.font = font(400, 26);
+      const lines = wrapCanvasText(ctx, p.desc, W - 300);
+      lines.forEach((line) => {
+        ctx.fillText(line, 140, y);
+        y += 36;
+      });
+      y += 20;
+    });
+
+    // ── 운세 ──
+    y = Math.max(y + 20, 1620);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#e8a0b4";
+    ctx.font = font(700, 30);
+    ctx.fillText("🔮 케미 운세", W / 2, y);
+    y += 44;
+    ctx.fillStyle = "#4a4365";
+    ctx.font = font(500, 26);
+    const fortuneLines = wrapCanvasText(ctx, data.fortune, W - 240);
+    fortuneLines.forEach((line) => {
+      ctx.fillText(line, W / 2, y);
+      y += 36;
+    });
+
+    // ── 하단 워터마크 ──
+    ctx.fillStyle = "#c4b5a8";
+    ctx.font = font(500, 26);
+    ctx.textAlign = "center";
+    ctx.fillText("friend-kemi.vercel.app", W / 2, H - 60);
+
+    // 다운로드
+    const url = canvas.toDataURL("image/png");
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `케미결과_${n1}_${n2}.png`;
+    a.click();
+  }
+
   function handleShare() {
     const cleanParams = new URLSearchParams({ n1, n2, e1, e2 });
     const shareUrl = `${window.location.origin}/result?${cleanParams.toString()}`;
@@ -270,6 +403,9 @@ function ResultContent() {
           <button className="result-share-btn" onClick={handleShare}>
             결과 공유하기 💌
           </button>
+          <button className="result-save-img-btn" onClick={handleSaveImage}>
+            이미지로 저장 📸
+          </button>
           <Link href="/test" className="result-retry-link">
             다른 친구랑 다시 해보기 →
           </Link>
@@ -280,6 +416,28 @@ function ResultContent() {
       </div>
     </div>
   );
+}
+
+/* ── canvas 텍스트 줄바꿈 헬퍼 ── */
+function wrapCanvasText(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxWidth: number
+): string[] {
+  const words = text.split("");
+  const lines: string[] = [];
+  let line = "";
+  for (const char of words) {
+    const test = line + char;
+    if (ctx.measureText(test).width > maxWidth && line) {
+      lines.push(line);
+      line = char;
+    } else {
+      line = test;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
 }
 
 /* ──────────────────────────────────────
