@@ -583,9 +583,9 @@ export const chemistryData: Record<string, ChemistryContent> = {
       },
       {
         emoji: "💗",
-        title: "정의 온도 맞춤",
+        title: "정이 통하는 온도",
         desc:
-          "너는 뜨겁고, 친구는 따뜻해. 둘이 같이 있으면 사람들한테도 편한 분위기가 만들어져.",
+          "너는 뜨겁고, 친구는 따뜻해. 둘이 같이 있으면 주변 사람도 편하게 느끼는 분위기가 돼.",
       },
     ],
 
@@ -729,7 +729,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
         emoji: "🧡",
         title: "따뜻한 안정감",
         desc:
-          "너의 열정이 친구에겐 용기가 되고, 친구의 안정감이 너에겐 쉼이 돼. 그래서 서로 기분이 오래 좋아져.",
+          "너의 열정이 친구에겐 용기가 되고, 친구의 안정감이 너에겐 쉼이 돼. 그래서 서로 좋은 기분이 오래가.",
       },
       {
         emoji: "📌",
@@ -780,9 +780,9 @@ export const chemistryData: Record<string, ChemistryContent> = {
     ],
 
     activities: [
-      { emoji: "📚", title: "스터디+간식", desc: "친구가 집중을 잡아주고 너가 분위기를 살려서 꾸준히 하게 돼." },
+      { emoji: "📚", title: "스터디+간식", desc: "친구가 집중할 분위기를 잡아주고 너가 분위기를 살려서 꾸준히 하게 돼." },
       { emoji: "🍰", title: "디저트 카페 탐방", desc: "너의 즉흥과 토의 안정감이 합쳐져서 실패 없는 코스가 나와." },
-      { emoji: "🏫", title: "동아리 운영 회의", desc: "너는 아이디어와 추진, 친구는 실행 디테일로 팀을 살려." },
+      { emoji: "🏫", title: "동아리 운영 회의", desc: "너는 아이디어와 추진, 친구는 꼼꼼한 실행력으로 팀을 끌어줘." },
       { emoji: "🧺", title: "장보기+요리", desc: "토가 준비를 탄탄히 하고 너가 즐겁게 진행해서 집들이 같은 거 잘 맞아." },
     ],
 
@@ -990,7 +990,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
         emoji: "📌",
         title: "팀플 안정장치",
         desc:
-          "너는 일정과 정리, 친구는 기획과 아이디어로 역할이 나뉘기 쉬워. 그래서 조별과제에서 힘이 덜 빠져.",
+          "너는 일정과 정리, 친구는 기획과 아이디어로 역할이 나뉘기 쉬워. 그래서 조별과제에서 소모가 적어.",
       },
     ],
 
@@ -1178,7 +1178,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
     ],
 
     tips: [
-      { emoji: "🆕", text: "한 달에 한 번은 새로운 코스 하나 넣어. 작은 변화가 관계를 살려줘." },
+      { emoji: "🆕", text: "한 달에 한 번은 새로운 코스 하나 넣어. 작은 변화가 관계에 활기를 줘." },
       { emoji: "💬", text: "서운한 건 짧게라도 말해. 토는 쌓이면 오래 간다 ㅠㅠ" },
       { emoji: "🎲", text: "결정 안 될 땐 룰렛 앱 켜. 시간을 아끼는 게 우정 지키는 길." },
       { emoji: "📌", text: "서로 잘하는 걸 딱 맡아. 한 명은 정리, 한 명은 자료 찾기처럼." },
@@ -1186,7 +1186,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
 
     activities: [
       { emoji: "📚", title: "도서관 스터디", desc: "조용히 집중하면서 옆에 있는 안정감이 최고야." },
-      { emoji: "☕", title: "단골 카페 만들기", desc: "자주 가도 질리지 않는 루틴이 생기면 친밀감이 커져." },
+      { emoji: "☕", title: "단골 카페 만들기", desc: "자주 가도 질리지 않는 루틴이 생기면 친밀감이 깊어져." },
       { emoji: "🧩", title: "퍼즐/보드게임", desc: "차분하게 집중하는 활동이 잘 맞아. 완성했을 때 만족감도 큼." },
       { emoji: "🧾", title: "필기·자료 정리 교환", desc: "서로 성실하게 챙기는 스타일이라 효율이 확 올라가." },
     ],
@@ -1204,7 +1204,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
     score: 91,
     emoji: "⚔️",
     title: "단단팀플 케미",
-    subtitle: "정리왕 둘이 만나면 결과가 남는다",
+    subtitle: "정리왕 둘이 만나면 결과물이 남는다",
     oneLiner: "조별과제 A+ 냄새 나는 실무 최강 조합 🪨⚔️",
 
     summary:
@@ -1383,7 +1383,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
         emoji: "🧡",
         title: "온도 올리기",
         desc:
-          "친구의 따뜻함이 너의 차가운 이미지를 눌러줘. 사람들 사이에서 너도 덜 날카롭게 보이게 됨.",
+          "친구의 따뜻함이 너의 차가운 이미지를 부드럽게 만들어줘. 사람들 사이에서 너도 덜 날카롭게 보이게 됨.",
       },
       {
         emoji: "🎯",
@@ -1424,12 +1424,12 @@ export const chemistryData: Record<string, ChemistryContent> = {
       { emoji: "🩹", text: "지적하기 전에 한 줄 칭찬부터. '좋은데, 이 부분만 이렇게 하면 더 좋아' 이게 진짜 중요." },
       { emoji: "💬", text: "친구에게는 기준을 '규칙'이 아니라 '이유'로 설명해줘. 목은 납득하면 진짜 잘 따라와." },
       { emoji: "📌", text: "팀플에선 네가 검수·구조, 친구가 콘텐츠·아이디어. 서로 건드리는 영역을 정해." },
-      { emoji: "🫶", text: "친구가 감정 얘기할 땐 해결 말고 공감부터. 그게 관계를 엄청 살려." },
+      { emoji: "🫶", text: "친구가 감정 얘기할 땐 해결 말고 공감부터. 그게 관계에 큰 도움이 돼." },
     ],
 
     activities: [
       { emoji: "🗂️", title: "발표자료 같이 만들기", desc: "너의 구조화와 친구의 디자인 감각이 합쳐져서 퀄리티가 확 올라가." },
-      { emoji: "📚", title: "시험 대비 요약", desc: "너의 핵심 정리와 친구의 이해력이 만나서 암기가 쉬워져." },
+      { emoji: "📚", title: "시험 대비 요약", desc: "너의 핵심 정리와 친구가 이해를 도와줘서 암기가 쉬워져." },
       { emoji: "🎨", title: "포트폴리오/작품 만들기", desc: "친구가 창의 파트, 너가 완성도 파트 잡으면 결과물이 남는다." },
       { emoji: "☕", title: "조용한 카페 회의", desc: "말이 세질 수 있어서 사람 많은 데보다 둘만 조용한 곳이 더 좋아." },
     ],
@@ -1464,7 +1464,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
         emoji: "🧯",
         title: "사고 예방",
         desc:
-          "친구가 과열될 때 너의 기준이 브레이크가 돼. 그래서 큰 실수로 가는 걸 막아주는 편.",
+          "친구가 과열될 때 너의 기준이 브레이크가 돼. 그래서 큰 실수로 번지는 걸 막아줘.",
       },
       {
         emoji: "🧡",
@@ -1746,7 +1746,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
 
     tips: [
       { emoji: "💬", text: "친구가 돌려 말하면 '결론은 A야 B야?' 이렇게 부드럽게 확인해줘." },
-      { emoji: "🫶", text: "가끔은 '오늘 고생했지' 같은 감정 문장도 섞어줘. 그게 관계 온도를 살려." },
+      { emoji: "🫶", text: "가끔은 '오늘 고생했지' 같은 감정 문장도 섞어줘. 그게 관계의 온기를 유지해줘." },
       { emoji: "📌", text: "팀플은 역할 분리 확실히. 친구는 조사·분석, 너는 구조·검수 맡으면 베스트." },
       { emoji: "⏸️", text: "너무 빡세게 굴리기보다 중간에 쉬는 타임 넣자. 머리 쓰는 조합이라 지치기 쉬움." },
     ],
@@ -1775,7 +1775,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
     oneLiner: "내 조언이 너를 더 빛나게 만드는 조합 🌊🌿",
 
     summary:
-      "너는 상황을 읽고 조용히 도움 주는 타입이고, 친구는 감성적이면서도 꾸준히 노력하는 타입이야. 네가 한마디 던지면 친구가 그걸 진짜로 키워서 결과로 보여줘. 그래서 너도 뿌듯함이 커져. 신학기엔 같이 루틴 잡으면 둘 다 성장 속도가 빨라.",
+      "너는 상황을 읽고 조용히 도움 주는 타입이고, 친구는 감성적이면서도 꾸준히 노력하는 타입이야. 네가 한마디 던지면 친구가 그걸 실제로 실천해서 성과를 만들어내. 그래서 너도 뿌듯함이 커져. 신학기엔 같이 루틴 잡으면 둘 다 성장 속도가 빨라.",
 
     goodPoints: [
       {
