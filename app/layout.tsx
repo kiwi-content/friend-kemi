@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   manifest: "/manifest.webmanifest",
-  title: `${SITE_NAME} 💜 두근두근 스쿨 케미`,
+  title: `${SITE_NAME} 💜 두근두근 캠퍼스 케미`,
   description: SITE_DESCRIPTION,
   keywords: [
     "친구 궁합",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "친구 케미",
     "케미 테스트",
     "신학기 궁합",
-    "학교 친구 궁합",
+    "대학 친구 궁합",
     "무료 궁합 테스트",
     "생년월일 궁합",
     "찐친 궁합",

@@ -24,7 +24,7 @@ const Sparkle = ({ className = "" }: { className?: string }) => (
 );
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | 두근두근 스쿨 케미`,
+  title: `${SITE_NAME} | 두근두근 캠퍼스 케미`,
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
@@ -117,7 +117,7 @@ export default function Home() {
             <span className="title-line-1">
               <em>두근두근</em>
             </span>
-            <span className="title-line-2">스쿨 케미</span>
+            <span className="title-line-2">캠퍼스 케미</span>
           </h1>
 
           <p className="hero-desc">

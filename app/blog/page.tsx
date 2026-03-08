@@ -24,13 +24,13 @@ const categoryEmoji: Record<(typeof BLOG_CATEGORIES)[number], string> = {
 export const metadata: Metadata = {
   title: "친구 관계 꿀팁 블로그 | 친구 케미 궁합",
   description:
-    "신학기 친구 사귀는 법, 친구 갈등 해결, 대화법까지. 고등학생도 바로 써먹을 수 있는 친구 관계 실전 가이드를 모았어요.",
+    "신학기 친구 사귀는 법, 친구 갈등 해결, 대화법까지. 대학생이 바로 써먹을 수 있는 친구 관계 실전 가이드를 모았어요.",
   keywords: [
     "신학기 친구 사귀는 법",
     "친구 갈등 해결",
-    "고등학생 인간관계",
+    "대학생 인간관계",
     "친구 대화법",
-    "학교 생활 팁",
+    "대학 생활 팁",
   ],
   alternates: {
     canonical: "/blog",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `친구 관계 꿀팁 블로그 | ${SITE_NAME}`,
     description:
-      "신학기 친구 사귀기부터 갈등 해결까지, 학교에서 바로 쓸 수 있는 관계 가이드.",
+      "신학기 친구 사귀기부터 갈등 해결까지, 대학에서 바로 쓸 수 있는 관계 가이드.",
     url: "/blog",
     siteName: SITE_NAME,
     locale: "ko_KR",
@@ -59,7 +59,7 @@ export default function BlogPage() {
     "@type": "Blog",
     name: "친구 관계 꿀팁 블로그",
     description:
-      "신학기 친구 사귀기, 갈등 해결, 대화법을 다루는 고등학생 대상 친구 관계 가이드",
+      "신학기 친구 사귀기, 갈등 해결, 대화법을 다루는 대학생 대상 친구 관계 가이드",
     blogPost: sortedPosts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,

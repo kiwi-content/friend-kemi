@@ -1268,7 +1268,7 @@ export const chemistryData: Record<string, ChemistryContent> = {
     activities: [
       { emoji: "📚", title: "스터디 리더 같이 하기", desc: "정리력과 책임감이 높아서 팀을 끌고 가기 좋아." },
       { emoji: "🗂️", title: "노트/자료 아카이브 만들기", desc: "둘 다 체계 좋아해서 만들어두면 학기 내내 편해." },
-      { emoji: "🏫", title: "학급·동아리 운영", desc: "실무가 탄탄해서 신뢰 받기 쉬워. 맡으면 끝까지 해냄." },
+      { emoji: "🏫", title: "학과·동아리 운영", desc: "실무가 탄탄해서 신뢰 받기 쉬워. 맡으면 끝까지 해냄." },
       { emoji: "☕", title: "조용한 카페 회의", desc: "불필요한 소음 없이 딱 필요한 얘기만 해서 효율이 잘 나와." },
     ],
 
