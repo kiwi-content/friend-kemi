@@ -9,6 +9,7 @@ export type BlogSection = {
 export type BlogPost = {
   slug: string;
   title: string;
+  metaTitle?: string;
   concern: string;
   description: string;
   category: BlogCategory;
@@ -25,6 +26,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "new-class-first-week",
     title: "새 학기 첫 주, 어색함 덜고 친구 만드는 7일 루틴",
+    metaTitle: "새 학기 첫 주에 혼밥러 안 되려면 이거 해봐",
     concern: "공강 시간마다 어디로 가야 할지 몰라서 눈치만 보게 돼.",
     description:
       "새 학기에 말 걸기 어려운 친구를 위해, 캠퍼스에서 바로 써먹는 첫 주 루틴을 담았어요.",
@@ -77,6 +79,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "shy-first-talk",
     title: "낯가림 심한데 말 걸어야 할 때 쓰는 한마디",
+    metaTitle: "낯가림 극심한데 말 걸 수밖에 없을 때, 이 한마디면 됨",
     concern: "말 걸 타이밍을 놓치고 집에 와서 후회해.",
     description:
       "먼저 말 거는 거 세상에서 제일 어려운 사람 모여. 부담 제로인 첫 대화 방법만 골라봤어.",
@@ -128,6 +131,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "lunch-group-anxiety",
     title: "점심시간마다 불안할 때, 자연스럽게 자리 잡는 법",
+    metaTitle: "점심시간만 되면 심장 쿵… 나만 이런 거 아니지?",
     concern: "점심만 되면 어디 앉아야 할지 머리가 하얘져.",
     description:
       "점심시간 불안을 줄이고 친구 무리에 자연스럽게 섞이는 현실적인 방법을 담았어요.",
@@ -179,6 +183,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "group-project-partner",
     title: "조별과제 파트너 고를 때, 우정도 성적도 챙기는 법",
+    metaTitle: "조별과제 때문에 친구 잃은 사람 진짜 많음",
     concern: "친한 친구랑 하고 싶은데 과제 망할까 걱정돼.",
     description:
       "조별과제에서 관계를 지키면서 결과도 챙길 수 있게, 실제로 통하는 협업 기준을 정리했어요.",
@@ -231,6 +236,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "transfer-student-adaptation",
     title: "편입 온 첫 달, 친구 만들기 핵심만 콕",
+    metaTitle: "편입생인데 아는 사람 0명… 첫 달 생존법",
     concern: "이미 다 친해진 과에 나만 끼기 어려운 느낌이야.",
     description:
       "편입생이 첫 달에 덜 외롭고 빠르게 적응할 수 있게, 진짜 필요한 행동만 정리했어요.",
@@ -282,6 +288,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "online-chat-start",
     title: "과 단톡에서 안 묻히고 자연스럽게 존재감 만드는 법",
+    metaTitle: "과 단톡 눈팅만 하다가 투명인간 된 사람 특징",
     concern: "단톡에선 뭘 써야 할지 몰라서 계속 눈팅만 해.",
     description:
       "학과 단톡에서 부담 없이 말문을 열고, 오프라인 대화로 이어지는 방법을 담았어요.",
@@ -333,6 +340,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "best-friend-drifted",
     title: "베프랑 멀어진 느낌일 때, 다시 가까워지는 현실 루틴",
+    metaTitle: "베프랑 갑자기 서먹해졌는데… 이대로 끝인 걸까?",
     concern: "전엔 매일 붙어 있었는데 요즘은 인사도 어색해.",
     description:
       "가까웠던 친구와 서먹해졌을 때, 부담 없이 다시 대화 흐름을 만드는 방법을 정리했어요.",
@@ -384,6 +392,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "rumor-and-misunderstanding",
     title: "안 한 말이 소문 났을 때, 어떻게 해야 할까",
+    metaTitle: "내가 안 한 말이 소문 나고 있대, 어떡하지?",
     concern: "내가 안 한 말이 퍼져서 너무 속상해.",
     description:
       "억울한데 해명하면 더 이상해지는 거 알잖아. 감정 소모 줄이면서 오해 푸는 대화 순서 알려줄게.",
@@ -436,6 +445,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ignored-messages",
     title: "답장 늦는 친구 때문에 속상할 때, 덜 다치게 확인하는 법",
+    metaTitle: "읽씹당한 거 맞지? 확인하고 싶은데 무서울 때",
     concern: "읽씹 같아서 하루 종일 그 생각만 하게 돼.",
     description:
       "답장 지연 상황을 과하게 해석하지 않고, 마음을 지키면서 확인하는 방법을 정리했어요.",
@@ -487,6 +497,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "money-lent-friend",
     title: "친구한테 빌려준 돈, 말 꺼내기 진짜 애매할 때",
+    metaTitle: "빌려준 돈 안 갚는 친구, 우정 끝인 걸까?",
     concern: "돈 얘기 꺼내면 괜히 분위기 망칠까 봐 무서워.",
     description:
       "돈 얘기 꺼냈다가 사이 틀어질까 봐 못 말하고 있지? 감정싸움 없이 돈 받는 실전 문장 정리해놨어.",
@@ -538,6 +549,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "joke-crossed-line",
     title: "장난이 선 넘었을 때, 상처 없이 선 긋는 법",
+    metaTitle: "장난이라면서요? 근데 나는 진짜 상처받았는데",
     concern: "친구 장난이 불편한데 예민해 보일까 봐 참게 돼.",
     description:
       "불편한 장난을 관계 깨지지 않게 멈추는 방법을, 부드럽고 분명한 말투로 정리했어요.",
@@ -589,6 +601,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "jealousy-between-friends",
     title: "친구한테 질투 날 때, 나만 이런 건가?",
+    metaTitle: "찐친한테 질투 나면 나쁜 사람인 걸까? 솔직한 답",
     concern: "친구가 다른 친구랑 더 붙어 있으면 나만 밀린 느낌이야.",
     description:
       "좋아하는 친구인데 왜 질투가 나는 걸까. 감정 터지기 전에 관계 안 망치고 말하는 법 정리해봤어.",
@@ -640,6 +653,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "team-chat-fight",
     title: "단톡 싸움 났을 때, 불 붙이지 않고 정리하는 방법",
+    metaTitle: "단톡 분위기 한 번 깨지면 복구 불가? 정리하는 법",
     concern: "단체방 분위기가 한 번 깨지면 너무 피곤해.",
     description:
       "단체 채팅 갈등을 키우지 않고 빠르게 정리하는 실전 중재 문장을 정리했어요.",
@@ -691,6 +705,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "apology-after-fight",
     title: "싸우고 먼저 사과하고 싶을 때, 자존감 지키는 법",
+    metaTitle: "먼저 사과하면 지는 거야? 아닌데…",
     concern: "내가 먼저 연락하면 진 것 같아서 망설여져.",
     description:
       "화해는 하고 싶은데 자존감도 지키고 싶은 친구를 위해, 깔끔한 사과 구조를 준비했어요.",
@@ -742,6 +757,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "boundary-overdependent-friend",
     title: "친구가 너무 의존할 때, 상처 주지 않고 거리 조절하기",
+    metaTitle: "좋은 친구인데 나한테 너무 기대… 감정 쓰레기통 된 기분",
     concern: "좋은 친구인데 내가 감정 쓰레기통 된 느낌이야.",
     description:
       "친구를 미워하지 않으면서도 내 에너지를 지킬 수 있도록, 부드러운 경계 대화를 정리했어요.",
@@ -793,6 +809,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "keep-conversation-going",
     title: "대화가 자꾸 끊길 때, 어색함 없이 이어가는 법",
+    metaTitle: "30초 만에 할 말 바닥… 대화 못 이어가는 사람 특징",
     concern: "처음 30초 지나면 할 말이 뚝 끊겨.",
     description:
       "대화를 길게 못 이어도 괜찮아. 짧은 질문과 리액션으로 자연스럽게 이어가는 방법을 알려줄게.",
@@ -845,6 +862,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "say-no-kindly",
     title: "부탁 거절이 어려울 때, 관계 안 상하게 말하는 법",
+    metaTitle: "싫은데 또 들어줬다… 거절 못 하는 나 어쩌지",
     concern: "싫은데도 미안해서 결국 다 들어주게 돼.",
     description:
       "친구 부탁을 정중하게 거절하면서도 관계를 지킬 수 있는 실전 문장을 준비했어요.",
@@ -896,6 +914,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "comfort-anxious-friend",
     title: "불안한 친구를 위로할 때, 진짜 힘이 되는 말",
+    metaTitle: "위로한다고 한 말이 오히려 상처가 됐을 때",
     concern: "도와주고 싶은데 무슨 말을 해야 할지 모르겠어.",
     description:
       "불안한 친구에게 실제로 도움이 되는 공감 말투와 피해야 할 말투를 구체적으로 정리했어요.",
@@ -947,6 +966,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "balance-study-friendship",
     title: "공부랑 친구 관계, 둘 다 무너지지 않게 챙기는 루틴",
+    metaTitle: "공부하면 친구 잃고, 친구 챙기면 성적 폭망… 해결법",
     concern: "공부하면 친구가 멀어질까 걱정되고, 친구 챙기면 공부가 밀려.",
     description:
       "성적도 챙기고 우정도 지키고 싶은 친구를 위해, 현실적인 시간 루틴과 대화법을 정리했어요.",
@@ -999,6 +1019,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "rebuild-trust-after-lie",
     title: "작은 거짓말 후 무너진 신뢰, 다시 쌓는 방법",
+    metaTitle: "사과는 받았는데 예전처럼 못 믿겠어… 나만 그래?",
     concern: "사과는 받았는데 예전처럼 믿어지지가 않아.",
     description:
       "거짓말 이후의 관계를 무리 없이 정리할 수 있도록, 신뢰 회복 기준을 구체적으로 정리했어요.",
@@ -1050,6 +1071,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "friendship-burnout",
     title: "친구 관계가 버거울 때, 번아웃 오기 전에 회복하기",
+    metaTitle: "친구가 싫은 건 아닌데 사람 만나기가 너무 싫어",
     concern: "친구가 싫은 건 아닌데 사람 만나는 게 너무 피곤해.",
     description:
       "관계 번아웃 신호를 빨리 알아차리고, 친구를 잃지 않으면서 회복하는 방법을 담았어요.",
@@ -1101,6 +1123,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "first-conflict-new-friend",
     title: "새 친구와 첫 갈등, 멀어지지 않게 푸는 법",
+    metaTitle: "친해진 지 한 달인데 벌써 싸웠어… 이거 끝난 거야?",
     concern: "친해진 지 얼마 안 됐는데 벌써 서먹해질까 봐 불안해.",
     description:
       "관계 초기에 생긴 갈등을 깔끔하게 풀고 오히려 더 단단해지는 방법을 알려줄게.",
@@ -1152,6 +1175,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "different-humor-style",
     title: "유머 코드 안 맞아도 편해질 수 있어",
+    metaTitle: "웃긴 포인트가 달라서 대화가 자꾸 붕 뜨는 사람",
     concern: "웃긴 포인트가 달라서 자꾸 대화가 붕 떠.",
     description:
       "유머 코드가 달라도 편하게 지낼 수 있도록, 어색함 줄이는 대화 전환법을 준비했어요.",
@@ -1203,6 +1227,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "respecting-different-values",
     title: "가치관 달라도 오래 가는 우정 만드는 법",
+    metaTitle: "생각이 다르다고 싸우는 친구, 계속 만나야 할까?",
     concern: "생각이 달라서 말하다 보면 자꾸 부딪혀.",
     description:
       "가치관이 달라도 존중을 지키며 친하게 지낼 수 있도록, 실전 대화 원칙을 정리했어요.",

@@ -27,14 +27,14 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | 친구 관계 꿀팁`,
+    title: `${post.metaTitle || post.title} | 친구 관계 꿀팁`,
     description: post.description,
     keywords: post.keywords,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | ${SITE_NAME}`,
+      title: `${post.metaTitle || post.title} | ${SITE_NAME}`,
       description: post.description,
       url: `/blog/${post.slug}`,
       siteName: SITE_NAME,
@@ -44,7 +44,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | ${SITE_NAME}`,
+      title: `${post.metaTitle || post.title} | ${SITE_NAME}`,
       description: post.description,
       images: [OG_IMAGE_PATH],
     },
