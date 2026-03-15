@@ -3,15 +3,16 @@ import Container from "../components/Container";
 import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
-  title: "케미 유형 소개 | 친구 케미 궁합",
+  title: "너는 어떤 케미 유형? | 친구 케미 궁합",
   description:
-    "사주 오행 조합으로 분류된 친구 케미 유형을 살펴보고 나와 친구의 관계 스타일을 이해해보세요.",
+    "찐친 케미, 티키타카 케미, 극과 극 케미까지. 오행으로 보는 5가지 친구 케미 유형, 너는 어디에 해당될까?",
   alternates: {
     canonical: "/types",
   },
   openGraph: {
-    title: `케미 유형 소개 | ${SITE_NAME}`,
-    description: "오행 기반 친구 케미 유형을 한눈에 확인해보세요.",
+    title: `너는 어떤 케미 유형? | ${SITE_NAME}`,
+    description:
+      "찐친 케미, 티키타카 케미, 극과 극 케미까지. 오행으로 보는 5가지 친구 케미 유형 확인해봐.",
     url: "/types",
     siteName: SITE_NAME,
     locale: "ko_KR",

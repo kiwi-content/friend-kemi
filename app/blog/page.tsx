@@ -22,9 +22,9 @@ const categoryEmoji: Record<(typeof BLOG_CATEGORIES)[number], string> = {
 };
 
 export const metadata: Metadata = {
-  title: "친구 관계 꿀팁 블로그 | 친구 케미 궁합",
+  title: "친구 때문에 고민될 때 읽는 글 | 친구 케미 궁합",
   description:
-    "신학기 친구 사귀는 법, 친구 갈등 해결, 대화법까지. 대학생이 바로 써먹을 수 있는 친구 관계 실전 가이드를 모았어요.",
+    "질투, 돈 문제, 읽씹, 낯가림까지. 친구 사이에서 진짜 겪는 고민별 실전 해결법 모아놨어.",
   keywords: [
     "신학기 친구 사귀는 법",
     "친구 갈등 해결",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     canonical: "/blog",
   },
   openGraph: {
-    title: `친구 관계 꿀팁 블로그 | ${SITE_NAME}`,
+    title: `친구 때문에 고민될 때 읽는 글 | ${SITE_NAME}`,
     description:
-      "신학기 친구 사귀기부터 갈등 해결까지, 대학에서 바로 쓸 수 있는 관계 가이드.",
+      "질투, 돈 문제, 읽씹, 낯가림까지. 친구 사이에서 진짜 겪는 고민별 실전 해결법 모아놨어.",
     url: "/blog",
     siteName: SITE_NAME,
     locale: "ko_KR",

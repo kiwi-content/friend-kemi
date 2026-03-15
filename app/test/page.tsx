@@ -3,9 +3,9 @@ import TestPageClient from "./test-page-client";
 import { OG_IMAGE_PATH, SITE_NAME } from "../lib/seo";
 
 export const metadata: Metadata = {
-  title: "친구 궁합 테스트 시작 | 친구 케미 궁합",
+  title: "우리 진짜 찐친일까? | 친구 궁합 테스트",
   description:
-    "두 사람의 생년월일로 오행 유형을 계산해 친구 궁합을 확인해보세요. 가입 없이 30초 만에 케미 점수와 관계 해석을 볼 수 있어요.",
+    "생년월일만 넣으면 30초 만에 결과! 오행으로 보는 찐친 케미 점수, 지금 바로 확인해봐. 친한 줄 알았는데 점수 보고 멘붕 온 사람 많음.",
   keywords: [
     "친구 궁합 테스트",
     "오행 궁합 테스트",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     canonical: "/test",
   },
   openGraph: {
-    title: "친구 궁합 테스트 시작",
+    title: "우리 진짜 찐친일까? | 친구 궁합 테스트",
     description:
-      "생년월일 입력 후 30초 만에 친구 케미 점수와 궁합 해석을 확인해보세요.",
+      "생년월일만 넣으면 30초 만에 결과! 친한 줄 알았는데 점수 보고 멘붕 온 사람 많음.",
     url: "/test",
     siteName: SITE_NAME,
     locale: "ko_KR",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "친구 궁합 테스트 시작",
-    description: "오행 기반 친구 궁합을 지금 바로 확인해보세요.",
+    title: "우리 진짜 찐친일까? | 친구 궁합 테스트",
+    description: "생년월일만 넣으면 30초 만에 결과! 친한 줄 알았는데 점수 보고 멘붕 온 사람 많음.",
     images: [OG_IMAGE_PATH],
   },
 };

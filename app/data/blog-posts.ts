@@ -76,10 +76,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "shy-first-talk",
-    title: "낯가림 있어도 괜찮아, 부담 없는 첫 말 걸기",
+    title: "낯가림 심한데 말 걸어야 할 때 쓰는 한마디",
     concern: "말 걸 타이밍을 놓치고 집에 와서 후회해.",
     description:
-      "낯가림 있는 친구도 무리 없이 시작할 수 있게, 짧고 편한 첫 대화 방법만 모았어요.",
+      "먼저 말 거는 거 세상에서 제일 어려운 사람 모여. 부담 제로인 첫 대화 방법만 골라봤어.",
     category: "신학기",
     keywords: ["낯가림 친구", "말 걸기 방법", "대학생 대화 시작"],
     publishedAt: "2026-02-19",
@@ -383,10 +383,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "rumor-and-misunderstanding",
-    title: "소문으로 오해 생겼을 때, 억울함 덜고 똑똑하게 푸는 법",
+    title: "안 한 말이 소문 났을 때, 어떻게 해야 할까",
     concern: "내가 안 한 말이 퍼져서 너무 속상해.",
     description:
-      "소문 상황에서 감정 소모를 줄이고 오해를 정확하게 푸는 대화 순서를 알려줄게.",
+      "억울한데 해명하면 더 이상해지는 거 알잖아. 감정 소모 줄이면서 오해 푸는 대화 순서 알려줄게.",
     category: "갈등해결",
     featured: true,
     keywords: ["학교 소문 대처", "친구 오해 풀기", "신뢰 회복"],
@@ -486,10 +486,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "money-lent-friend",
-    title: "친구에게 빌려준 돈, 관계 안 깨고 받는 방법",
+    title: "친구한테 빌려준 돈, 말 꺼내기 진짜 애매할 때",
     concern: "돈 얘기 꺼내면 괜히 분위기 망칠까 봐 무서워.",
     description:
-      "친구 사이 금전 문제를 감정싸움 없이 정리할 수 있도록, 실제로 통하는 문장으로 구성했어요.",
+      "돈 얘기 꺼냈다가 사이 틀어질까 봐 못 말하고 있지? 감정싸움 없이 돈 받는 실전 문장 정리해놨어.",
     category: "갈등해결",
     keywords: ["친구 돈 빌려줌", "금전 갈등", "관계 경계"],
     publishedAt: "2026-02-12",
@@ -588,10 +588,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "jealousy-between-friends",
-    title: "친구 질투가 올라올 때, 서운함 건강하게 말하는 법",
+    title: "친구한테 질투 날 때, 나만 이런 건가?",
     concern: "친구가 다른 친구랑 더 붙어 있으면 나만 밀린 느낌이야.",
     description:
-      "질투 감정을 숨기거나 폭발하지 않고, 관계를 지키면서 표현하는 방법을 알려줄게.",
+      "좋아하는 친구인데 왜 질투가 나는 걸까. 감정 터지기 전에 관계 안 망치고 말하는 법 정리해봤어.",
     category: "갈등해결",
     keywords: ["친구 질투", "관계 불안", "서운함 표현"],
     publishedAt: "2026-02-10",

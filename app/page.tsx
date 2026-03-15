@@ -24,14 +24,16 @@ const Sparkle = ({ className = "" }: { className?: string }) => (
 );
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | 두근두근 캠퍼스 케미`,
-  description: SITE_DESCRIPTION,
+  title: `${SITE_NAME} | 이 친구랑 나, 진짜 통할까?`,
+  description:
+    "생년월일만 넣으면 오행으로 찐친 케미를 알 수 있어. 조별과제 팀원부터 룸메까지, 우리 사이 진짜 궁합 확인해봐.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `${SITE_NAME} 💜`,
-    description: SITE_DESCRIPTION,
+    title: `${SITE_NAME} | 이 친구랑 나, 진짜 통할까?`,
+    description:
+      "생년월일만 넣으면 오행으로 찐친 케미를 알 수 있어. 우리 사이 진짜 궁합 확인해봐.",
     siteName: SITE_NAME,
     url: "/",
     locale: "ko_KR",
@@ -40,8 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} 💜`,
-    description: SITE_DESCRIPTION,
+    title: `${SITE_NAME} | 이 친구랑 나, 진짜 통할까?`,
+    description:
+      "생년월일만 넣으면 오행으로 찐친 케미를 알 수 있어. 우리 사이 진짜 궁합 확인해봐.",
     images: [OG_IMAGE_PATH],
   },
 };
