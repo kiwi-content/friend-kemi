@@ -1,5 +1,18 @@
 {
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "friend-kemi.vercel.app"
+        }
+      ],
+      "destination": "https://www.ohgunghap.xyz/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/google1db0050479a333bf.html",
