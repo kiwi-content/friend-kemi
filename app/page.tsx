@@ -2,6 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { OG_IMAGE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo";
 import HeroForm from "./components/HeroForm";
+import { blogPosts } from "./data/blog-posts";
+
+const categoryEmoji: Record<string, string> = {
+  신학기: "🌸",
+  갈등해결: "🧩",
+  대화법: "💬",
+};
 
 /* ──────────────────────────────────────
    FriendKemi Hero — Editorial × Playful
@@ -152,6 +159,41 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* ━━━ BLOG TEASER ━━━ */}
+      <section style={{ padding: "2.5rem 1.5rem", background: "#FFFDF8" }}>
+        <div style={{ maxWidth: "480px", margin: "0 auto" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#b46087", marginBottom: "0.5rem", letterSpacing: "0.05em" }}>
+            친구 관계 꿀팁
+          </p>
+          <h2 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#1a1a2e", marginBottom: "1.25rem", lineHeight: 1.4 }}>
+            케미 말고도 도움되는 이야기
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            {blogPosts.filter((p) => p.featured).slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                style={{ textDecoration: "none" }}
+              >
+                <div style={{ background: "#fff", borderRadius: "1rem", padding: "1rem 1.25rem", boxShadow: "0 1px 6px rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: "1rem" }}>
+                  <span style={{ fontSize: "1.5rem", flexShrink: 0 }}>{categoryEmoji[post.category]}</span>
+                  <div>
+                    <p style={{ fontSize: "0.7rem", color: "#b46087", fontWeight: 600, marginBottom: "0.2rem" }}>{post.category}</p>
+                    <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#1a1a2e", lineHeight: 1.4 }}>{post.title}</p>
+                    <p style={{ fontSize: "0.75rem", color: "#888", marginTop: "0.2rem" }}>{post.concern}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "1.25rem" }}>
+            <Link href="/blog" style={{ fontSize: "0.85rem", color: "#b46087", fontWeight: 600, textDecoration: "none" }}>
+              글 더 보기 →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ━━━ FOOTER ━━━ */}
       <footer
