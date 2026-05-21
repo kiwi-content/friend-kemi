@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "../../components/Container";
+import KakaoAdFit from "../../components/KakaoAdFit";
 import { blogPosts, getBlogPostBySlug } from "../../data/blog-posts";
 import { OG_IMAGE_PATH, SITE_NAME, SITE_URL } from "../../lib/seo";
 
@@ -281,6 +282,8 @@ export default async function BlogPostPage({
             );
           })}
         </div>
+
+        <KakaoAdFit unit="DAN-05OFJTRpQBzYFK2f" width={300} height={250} />
 
         <section className="bg-white rounded-3xl p-6 shadow-lg mt-7 text-center">
           <h2 className="text-lg font-bold mb-2">💖 {ctaCopy.title}</h2>
