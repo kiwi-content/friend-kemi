@@ -3,20 +3,9 @@
 @tailwind utilities;
 
 /* ============================================
-   FONTS — 로컬 파일 (public/fonts/)
+   FONTS — Google Fonts (Nanum Square Round)
    ============================================ */
-@font-face {
-  font-family: "Cafe24Ssurround";
-  src: url("/fonts/Cafe24Ssurround.woff2") format("woff2");
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cafe24SsurroundAir";
-  src: url("/fonts/Cafe24SsurroundAir.woff2") format("woff2");
-  font-weight: 300;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Square+Round:wght@400;700;800&display=swap");
 
 /* ============================================
    VARIABLES — 로즈 컬러 시스템
@@ -44,8 +33,8 @@
 
   --blue: #38bdf8;
 
-  --font-display: "Cafe24Ssurround", "Apple SD Gothic Neo", sans-serif;
-  --font-body: "Cafe24SsurroundAir", "Apple SD Gothic Neo", "Noto Sans KR",
+  --font-display: "Nanum Square Round", "Apple SD Gothic Neo", sans-serif;
+  --font-body: "Nanum Square Round", "Apple SD Gothic Neo", "Noto Sans KR",
     system-ui, sans-serif;
 }
 
